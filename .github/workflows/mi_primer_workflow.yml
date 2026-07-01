@@ -1,0 +1,28 @@
+# 1. El nombre de tu flujo de trabajo (Aparecerá en la pestaña "Actions" de GitHub)
+name: Mi Primer Workflow en Python
+
+# 2. ¿Cuándo se ejecutará esto? (El evento o "gatillo")
+# En este caso, cada vez que hagas un "push" al repositorio.
+on: [push]
+
+# 3. ¿Qué tareas (jobs) va a realizar el robot?
+jobs:
+  ejecutar-python:
+    # 4. ¿En qué sistema operativo va a trabajar el robot?
+    runs-on: ubuntu-latest
+
+    # 5. Los pasos (steps) secuenciales a seguir
+    steps:
+      # Paso A: El robot debe descargar (clonar) tu código para poder leerlo
+      - name: Obtener el código del repositorio
+        uses: actions/checkout@v4
+
+      # Paso B: El robot necesita tener Python instalado en su máquina virtual
+      - name: Instalar y configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14" # Puedes cambiar la versión si lo necesitas
+
+      # Paso C: Finalmente, el robot ejecuta tu archivo
+      - name: Ejecutar el script hola.py
+        run: python hola.py
