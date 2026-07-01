@@ -25,4 +25,4 @@ jobs:
 
       # Paso C: Finalmente, el robot ejecuta tu archivo
       - name: Ejecutar el script ejemplo.py
-        run: python hola.py
+        run: python ejemplo.py
