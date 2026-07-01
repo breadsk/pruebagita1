@@ -24,5 +24,5 @@ jobs:
           python-version: "3.14" # Puedes cambiar la versión si lo necesitas
 
       # Paso C: Finalmente, el robot ejecuta tu archivo
-      - name: Ejecutar el script hola.py
+      - name: Ejecutar el script ejemplo.py
         run: python hola.py
